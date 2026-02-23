@@ -1,11 +1,11 @@
 name: Daily Movie Update
 on:
   schedule:
-    - cron: '*/10 * * * *' # Runs every 10 minutes
+    - cron: '0 */6 * * *' # Runs every 6 hours (Better for API health)
   workflow_dispatch:      # Allows you to click "Run" manually
 
 permissions:
-  contents: write         # Crucial: Gives the bot permission to create folders
+  contents: write         # FIXES THE 404 ERROR
 
 jobs:
   build:
@@ -34,5 +34,5 @@ jobs:
           git config --global user.name "MovieBot"
           git config --global user.email "bot@github.com"
           git add index.html search.html movies/
-          git commit -m "Automated Movie Update" || echo "No changes to commit"
-          git push
+          # Only commit if there are actual changes
+          git diff --quiet && git diff --staged --quiet || (git commit -m "Updated 50+ Global Movies" && git push)
