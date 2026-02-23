@@ -1,7 +1,7 @@
 import requests
 import os
 
-# 1. Configuration & Secrets
+# 1. Configuration & Secrets 
 TMDB_API_KEY = os.getenv("TMDB_API_KEY")
 MONEY_LINK = os.getenv("UNIVERSAL_LINK")
 DIRECT_AD_LINK = os.getenv("DIRECT_AD_LINK")
