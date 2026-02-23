@@ -1,8 +1,11 @@
 name: Daily Movie Update
 on:
   schedule:
-    - cron: '0 0 * * *' # Runs daily at Midnight
-  workflow_dispatch:   # Allows you to run it manually for testing
+    - cron: '*/10 * * * *' # Runs every 10 minutes
+  workflow_dispatch:      # Allows you to click "Run" manually
+
+permissions:
+  contents: write         # Crucial: Gives the bot permission to create folders
 
 jobs:
   build:
@@ -23,12 +26,13 @@ jobs:
         env:
           TMDB_API_KEY: ${{ secrets.TMDB_API_KEY }}
           UNIVERSAL_LINK: ${{ secrets.UNIVERSAL_LINK }}
+          DIRECT_AD_LINK: ${{ secrets.DIRECT_AD_LINK }}
         run: python main.py
 
       - name: Commit and Push Changes
         run: |
           git config --global user.name "MovieBot"
           git config --global user.email "bot@github.com"
-          git add index.html
-          git commit -m "Automated Movie Update"
+          git add index.html search.html movies/
+          git commit -m "Automated Movie Update" || echo "No changes to commit"
           git push
