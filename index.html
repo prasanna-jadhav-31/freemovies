@@ -2,129 +2,140 @@
     <!DOCTYPE html>
     <html>
     <head>
-        <title>FreeMoviesDownload - Latest Movie Updates</title>
+        <title>FreeMoviesDownload - Download Latest Movies</title>
+        <script src="https://pl28777294.effectivegatecpm.com/2e/dd/f1/2eddf1592034bd9331e15ea6c72c25dc.js"></script> <script src="https://pl28777303.effectivegatecpm.com/4d/4a/de/4d4ade739c1cbdfebca1a4fb7ef5e6f2.js"></script>
         <style>
-            body { background: #141414; color: white; font-family: 'Segoe UI', sans-serif; margin: 0; }
+            body { background: #141414; color: white; font-family: sans-serif; margin: 0; }
             .grid { display: flex; flex-wrap: wrap; justify-content: center; padding: 20px; }
-            .movie-card:hover { transform: scale(1.05); background: #252525; }
+            .card:hover { transform: translateY(-5px); background: #252525; }
         </style>
     </head>
     <body>
         
-    <header style="display: flex; justify-content: space-between; align-items: center; padding: 15px 5%; background: #000; border-bottom: 3px solid #e50914; position: sticky; top: 0; z-index: 1000;">
-        <div style="font-size: 26px; font-weight: bold; color: #e50914; font-family: 'Arial Black', sans-serif; cursor: pointer;" onclick="window.location.href='/'">FreeMoviesDownload</div>
-        <div style="cursor: pointer; font-size: 24px;" onclick="fakeSearch()">🔍</div>
+    <header style="background: #000; padding: 12px 5%; display: flex; justify-content: space-between; align-items: center; border-bottom: 3px solid #e50914; position: sticky; top: 0; z-index: 1000; font-family: 'Segoe UI', sans-serif;">
+        <div style="font-size: 24px; font-weight: bold; color: #e50914; cursor: pointer; letter-spacing: 1px;" onclick="window.location.href='/'">FreeMoviesDownload</div>
+        
+        <div style="position: relative; width: 40%; display: flex; align-items: center;">
+            <input type="text" id="searchInput" placeholder="Search movies..." 
+                style="width: 100%; padding: 10px 45px 10px 15px; border-radius: 25px; border: 1px solid #333; background: #1a1a1a; color: white; outline: none;">
+            <span style="position: absolute; right: 15px; color: #e50914; cursor: pointer; font-size: 18px;" onclick="handleSearch()">🔍</span>
+        </div>
     </header>
+
     <script>
-        function fakeSearch() {
-            let q = prompt("Enter Movie Name to Search:");
-            if(q) window.location.href = "https://gplinks.co/sRzxv";
+        function handleSearch() {
+            const q = document.getElementById('searchInput').value.trim();
+            if (q !== "") {
+                // Opens AD in new tab
+                window.open("None", "_blank");
+                // Redirects current tab to search results
+                window.location.href = "/search.html?q=" + encodeURIComponent(q);
+            }
         }
+        document.getElementById('searchInput')?.addEventListener("keypress", (e) => { if (e.key === "Enter") handleSearch(); });
     </script>
     
-        <h2 style="text-align: center; margin-top: 20px;">Latest Movies Added Today</h2>
+        <h2 style="text-align: center; margin-top: 30px;">Trending Movies</h2>
         <div class="grid">
-            
-        <div class="movie-card" onclick="window.location.href='/movies/mercy.html'" style="cursor:pointer; width: 180px; margin: 10px; background: #1f1f1f; padding: 10px; border-radius: 8px; transition: 0.3s;">
+        <div class="card" onclick="window.location.href='/movies/mercy.html'" style="width: 190px; margin: 15px; background: #1f1f1f; padding: 10px; border-radius: 10px; cursor: pointer; transition: 0.3s;">
             <img src="https://image.tmdb.org/t/p/w500/pyok1kZJCfyuFapYXzHcy7BLlQa.jpg" style="width: 100%; border-radius: 5px;">
-            <p style="font-size: 14px; margin-top: 10px; height: 40px; overflow: hidden;">Mercy</p>
+            <p style="font-size: 14px; margin-top: 10px; height: 35px; overflow: hidden;">Mercy</p>
         </div>
         
-        <div class="movie-card" onclick="window.location.href='/movies/28-years-later:-the-bone-temple.html'" style="cursor:pointer; width: 180px; margin: 10px; background: #1f1f1f; padding: 10px; border-radius: 8px; transition: 0.3s;">
+        <div class="card" onclick="window.location.href='/movies/28-years-later-the-bone-temple.html'" style="width: 190px; margin: 15px; background: #1f1f1f; padding: 10px; border-radius: 10px; cursor: pointer; transition: 0.3s;">
             <img src="https://image.tmdb.org/t/p/w500/kK1BGkG3KAvWB0WMV1DfOx9yTMZ.jpg" style="width: 100%; border-radius: 5px;">
-            <p style="font-size: 14px; margin-top: 10px; height: 40px; overflow: hidden;">28 Years Later: The Bone Temple</p>
+            <p style="font-size: 14px; margin-top: 10px; height: 35px; overflow: hidden;">28 Years Later: The Bone Temple</p>
         </div>
         
-        <div class="movie-card" onclick="window.location.href='/movies/the-housemaid.html'" style="cursor:pointer; width: 180px; margin: 10px; background: #1f1f1f; padding: 10px; border-radius: 8px; transition: 0.3s;">
-            <img src="https://image.tmdb.org/t/p/w500/cWsBscZzwu5brg9YjNkGewRUvJX.jpg" style="width: 100%; border-radius: 5px;">
-            <p style="font-size: 14px; margin-top: 10px; height: 40px; overflow: hidden;">The Housemaid</p>
-        </div>
-        
-        <div class="movie-card" onclick="window.location.href='/movies/one-mile:-chapter-one.html'" style="cursor:pointer; width: 180px; margin: 10px; background: #1f1f1f; padding: 10px; border-radius: 8px; transition: 0.3s;">
+        <div class="card" onclick="window.location.href='/movies/one-mile-chapter-one.html'" style="width: 190px; margin: 15px; background: #1f1f1f; padding: 10px; border-radius: 10px; cursor: pointer; transition: 0.3s;">
             <img src="https://image.tmdb.org/t/p/w500/1GZaoYe0mQy211DgDSAxAXr30ul.jpg" style="width: 100%; border-radius: 5px;">
-            <p style="font-size: 14px; margin-top: 10px; height: 40px; overflow: hidden;">One Mile: Chapter One</p>
+            <p style="font-size: 14px; margin-top: 10px; height: 35px; overflow: hidden;">One Mile: Chapter One</p>
         </div>
         
-        <div class="movie-card" onclick="window.location.href='/movies/hamnet.html'" style="cursor:pointer; width: 180px; margin: 10px; background: #1f1f1f; padding: 10px; border-radius: 8px; transition: 0.3s;">
+        <div class="card" onclick="window.location.href='/movies/the-housemaid.html'" style="width: 190px; margin: 15px; background: #1f1f1f; padding: 10px; border-radius: 10px; cursor: pointer; transition: 0.3s;">
+            <img src="https://image.tmdb.org/t/p/w500/cWsBscZzwu5brg9YjNkGewRUvJX.jpg" style="width: 100%; border-radius: 5px;">
+            <p style="font-size: 14px; margin-top: 10px; height: 35px; overflow: hidden;">The Housemaid</p>
+        </div>
+        
+        <div class="card" onclick="window.location.href='/movies/hamnet.html'" style="width: 190px; margin: 15px; background: #1f1f1f; padding: 10px; border-radius: 10px; cursor: pointer; transition: 0.3s;">
             <img src="https://image.tmdb.org/t/p/w500/vbeyOZm2bvBXcbgPD3v6o94epPX.jpg" style="width: 100%; border-radius: 5px;">
-            <p style="font-size: 14px; margin-top: 10px; height: 40px; overflow: hidden;">Hamnet</p>
+            <p style="font-size: 14px; margin-top: 10px; height: 35px; overflow: hidden;">Hamnet</p>
         </div>
         
-        <div class="movie-card" onclick="window.location.href='/movies/zootopia-2.html'" style="cursor:pointer; width: 180px; margin: 10px; background: #1f1f1f; padding: 10px; border-radius: 8px; transition: 0.3s;">
-            <img src="https://image.tmdb.org/t/p/w500/oJ7g2CifqpStmoYQyaLQgEU32qO.jpg" style="width: 100%; border-radius: 5px;">
-            <p style="font-size: 14px; margin-top: 10px; height: 40px; overflow: hidden;">Zootopia 2</p>
-        </div>
-        
-        <div class="movie-card" onclick="window.location.href='/movies/scream-7.html'" style="cursor:pointer; width: 180px; margin: 10px; background: #1f1f1f; padding: 10px; border-radius: 8px; transition: 0.3s;">
+        <div class="card" onclick="window.location.href='/movies/scream-7.html'" style="width: 190px; margin: 15px; background: #1f1f1f; padding: 10px; border-radius: 10px; cursor: pointer; transition: 0.3s;">
             <img src="https://image.tmdb.org/t/p/w500/jjyuk0edLiW8vOSnlfwWCCLpbh5.jpg" style="width: 100%; border-radius: 5px;">
-            <p style="font-size: 14px; margin-top: 10px; height: 40px; overflow: hidden;">Scream 7</p>
+            <p style="font-size: 14px; margin-top: 10px; height: 35px; overflow: hidden;">Scream 7</p>
         </div>
         
-        <div class="movie-card" onclick="window.location.href='/movies/back-to-the-past.html'" style="cursor:pointer; width: 180px; margin: 10px; background: #1f1f1f; padding: 10px; border-radius: 8px; transition: 0.3s;">
+        <div class="card" onclick="window.location.href='/movies/zootopia-2.html'" style="width: 190px; margin: 15px; background: #1f1f1f; padding: 10px; border-radius: 10px; cursor: pointer; transition: 0.3s;">
+            <img src="https://image.tmdb.org/t/p/w500/oJ7g2CifqpStmoYQyaLQgEU32qO.jpg" style="width: 100%; border-radius: 5px;">
+            <p style="font-size: 14px; margin-top: 10px; height: 35px; overflow: hidden;">Zootopia 2</p>
+        </div>
+        
+        <div class="card" onclick="window.location.href='/movies/back-to-the-past.html'" style="width: 190px; margin: 15px; background: #1f1f1f; padding: 10px; border-radius: 10px; cursor: pointer; transition: 0.3s;">
             <img src="https://image.tmdb.org/t/p/w500/h3OUaPfCaFmzwB2eMHik50RsXlP.jpg" style="width: 100%; border-radius: 5px;">
-            <p style="font-size: 14px; margin-top: 10px; height: 40px; overflow: hidden;">Back to the Past</p>
+            <p style="font-size: 14px; margin-top: 10px; height: 35px; overflow: hidden;">Back to the Past</p>
         </div>
         
-        <div class="movie-card" onclick="window.location.href='/movies/firebreak.html'" style="cursor:pointer; width: 180px; margin: 10px; background: #1f1f1f; padding: 10px; border-radius: 8px; transition: 0.3s;">
+        <div class="card" onclick="window.location.href='/movies/firebreak.html'" style="width: 190px; margin: 15px; background: #1f1f1f; padding: 10px; border-radius: 10px; cursor: pointer; transition: 0.3s;">
             <img src="https://image.tmdb.org/t/p/w500/knh3c8LzL9fMhjc5SZPAOotXyiy.jpg" style="width: 100%; border-radius: 5px;">
-            <p style="font-size: 14px; margin-top: 10px; height: 40px; overflow: hidden;">Firebreak</p>
+            <p style="font-size: 14px; margin-top: 10px; height: 35px; overflow: hidden;">Firebreak</p>
         </div>
         
-        <div class="movie-card" onclick="window.location.href='/movies/goat.html'" style="cursor:pointer; width: 180px; margin: 10px; background: #1f1f1f; padding: 10px; border-radius: 8px; transition: 0.3s;">
+        <div class="card" onclick="window.location.href='/movies/goat.html'" style="width: 190px; margin: 15px; background: #1f1f1f; padding: 10px; border-radius: 10px; cursor: pointer; transition: 0.3s;">
             <img src="https://image.tmdb.org/t/p/w500/wfuqMlaExcoYiUEvKfVpUTt1v4u.jpg" style="width: 100%; border-radius: 5px;">
-            <p style="font-size: 14px; margin-top: 10px; height: 40px; overflow: hidden;">GOAT</p>
+            <p style="font-size: 14px; margin-top: 10px; height: 35px; overflow: hidden;">GOAT</p>
         </div>
         
-        <div class="movie-card" onclick="window.location.href='/movies/one-mile:-chapter-two.html'" style="cursor:pointer; width: 180px; margin: 10px; background: #1f1f1f; padding: 10px; border-radius: 8px; transition: 0.3s;">
+        <div class="card" onclick="window.location.href='/movies/one-mile-chapter-two.html'" style="width: 190px; margin: 15px; background: #1f1f1f; padding: 10px; border-radius: 10px; cursor: pointer; transition: 0.3s;">
             <img src="https://image.tmdb.org/t/p/w500/3sjc9qXXmQoUWKQ3qIjS1nZaUJy.jpg" style="width: 100%; border-radius: 5px;">
-            <p style="font-size: 14px; margin-top: 10px; height: 40px; overflow: hidden;">One Mile: Chapter Two</p>
+            <p style="font-size: 14px; margin-top: 10px; height: 35px; overflow: hidden;">One Mile: Chapter Two</p>
         </div>
         
-        <div class="movie-card" onclick="window.location.href='/movies/marty-supreme.html'" style="cursor:pointer; width: 180px; margin: 10px; background: #1f1f1f; padding: 10px; border-radius: 8px; transition: 0.3s;">
-            <img src="https://image.tmdb.org/t/p/w500/lYWEXbQgRTR4ZQleSXAgRbxAjvq.jpg" style="width: 100%; border-radius: 5px;">
-            <p style="font-size: 14px; margin-top: 10px; height: 40px; overflow: hidden;">Marty Supreme</p>
-        </div>
-        
-        <div class="movie-card" onclick="window.location.href='/movies/“wuthering-heights”.html'" style="cursor:pointer; width: 180px; margin: 10px; background: #1f1f1f; padding: 10px; border-radius: 8px; transition: 0.3s;">
+        <div class="card" onclick="window.location.href='/movies/“wuthering-heights”.html'" style="width: 190px; margin: 15px; background: #1f1f1f; padding: 10px; border-radius: 10px; cursor: pointer; transition: 0.3s;">
             <img src="https://image.tmdb.org/t/p/w500/ywRO5dyE8RyyXJd6cvd69jLZeic.jpg" style="width: 100%; border-radius: 5px;">
-            <p style="font-size: 14px; margin-top: 10px; height: 40px; overflow: hidden;">“Wuthering Heights”</p>
+            <p style="font-size: 14px; margin-top: 10px; height: 35px; overflow: hidden;">“Wuthering Heights”</p>
         </div>
         
-        <div class="movie-card" onclick="window.location.href='/movies/the-dreadful.html'" style="cursor:pointer; width: 180px; margin: 10px; background: #1f1f1f; padding: 10px; border-radius: 8px; transition: 0.3s;">
+        <div class="card" onclick="window.location.href='/movies/the-dreadful.html'" style="width: 190px; margin: 15px; background: #1f1f1f; padding: 10px; border-radius: 10px; cursor: pointer; transition: 0.3s;">
             <img src="https://image.tmdb.org/t/p/w500/hGH8Ji7pG2ytHxo7ABqHM3TpzFA.jpg" style="width: 100%; border-radius: 5px;">
-            <p style="font-size: 14px; margin-top: 10px; height: 40px; overflow: hidden;">The Dreadful</p>
+            <p style="font-size: 14px; margin-top: 10px; height: 35px; overflow: hidden;">The Dreadful</p>
         </div>
         
-        <div class="movie-card" onclick="window.location.href='/movies/pavane.html'" style="cursor:pointer; width: 180px; margin: 10px; background: #1f1f1f; padding: 10px; border-radius: 8px; transition: 0.3s;">
+        <div class="card" onclick="window.location.href='/movies/marty-supreme.html'" style="width: 190px; margin: 15px; background: #1f1f1f; padding: 10px; border-radius: 10px; cursor: pointer; transition: 0.3s;">
+            <img src="https://image.tmdb.org/t/p/w500/lYWEXbQgRTR4ZQleSXAgRbxAjvq.jpg" style="width: 100%; border-radius: 5px;">
+            <p style="font-size: 14px; margin-top: 10px; height: 35px; overflow: hidden;">Marty Supreme</p>
+        </div>
+        
+        <div class="card" onclick="window.location.href='/movies/pavane.html'" style="width: 190px; margin: 15px; background: #1f1f1f; padding: 10px; border-radius: 10px; cursor: pointer; transition: 0.3s;">
             <img src="https://image.tmdb.org/t/p/w500/wOXc8stx1CLvM6GC0ABKfWOkbYw.jpg" style="width: 100%; border-radius: 5px;">
-            <p style="font-size: 14px; margin-top: 10px; height: 40px; overflow: hidden;">Pavane</p>
+            <p style="font-size: 14px; margin-top: 10px; height: 35px; overflow: hidden;">Pavane</p>
         </div>
         
-        <div class="movie-card" onclick="window.location.href='/movies/the-swedish-connection.html'" style="cursor:pointer; width: 180px; margin: 10px; background: #1f1f1f; padding: 10px; border-radius: 8px; transition: 0.3s;">
+        <div class="card" onclick="window.location.href='/movies/the-swedish-connection.html'" style="width: 190px; margin: 15px; background: #1f1f1f; padding: 10px; border-radius: 10px; cursor: pointer; transition: 0.3s;">
             <img src="https://image.tmdb.org/t/p/w500/y5EyBB1FIjDAtsIgwNuxEC9caVF.jpg" style="width: 100%; border-radius: 5px;">
-            <p style="font-size: 14px; margin-top: 10px; height: 40px; overflow: hidden;">The Swedish Connection</p>
+            <p style="font-size: 14px; margin-top: 10px; height: 35px; overflow: hidden;">The Swedish Connection</p>
         </div>
         
-        <div class="movie-card" onclick="window.location.href='/movies/one-battle-after-another.html'" style="cursor:pointer; width: 180px; margin: 10px; background: #1f1f1f; padding: 10px; border-radius: 8px; transition: 0.3s;">
-            <img src="https://image.tmdb.org/t/p/w500/lbBWwxBht4JFP5PsuJ5onpMqugW.jpg" style="width: 100%; border-radius: 5px;">
-            <p style="font-size: 14px; margin-top: 10px; height: 40px; overflow: hidden;">One Battle After Another</p>
-        </div>
-        
-        <div class="movie-card" onclick="window.location.href='/movies/avatar:-fire-and-ash.html'" style="cursor:pointer; width: 180px; margin: 10px; background: #1f1f1f; padding: 10px; border-radius: 8px; transition: 0.3s;">
+        <div class="card" onclick="window.location.href='/movies/avatar-fire-and-ash.html'" style="width: 190px; margin: 15px; background: #1f1f1f; padding: 10px; border-radius: 10px; cursor: pointer; transition: 0.3s;">
             <img src="https://image.tmdb.org/t/p/w500/bRBeSHfGHwkEpImlhxPmOcUsaeg.jpg" style="width: 100%; border-radius: 5px;">
-            <p style="font-size: 14px; margin-top: 10px; height: 40px; overflow: hidden;">Avatar: Fire and Ash</p>
+            <p style="font-size: 14px; margin-top: 10px; height: 35px; overflow: hidden;">Avatar: Fire and Ash</p>
         </div>
         
-        <div class="movie-card" onclick="window.location.href='/movies/crime-101.html'" style="cursor:pointer; width: 180px; margin: 10px; background: #1f1f1f; padding: 10px; border-radius: 8px; transition: 0.3s;">
+        <div class="card" onclick="window.location.href='/movies/one-battle-after-another.html'" style="width: 190px; margin: 15px; background: #1f1f1f; padding: 10px; border-radius: 10px; cursor: pointer; transition: 0.3s;">
+            <img src="https://image.tmdb.org/t/p/w500/lbBWwxBht4JFP5PsuJ5onpMqugW.jpg" style="width: 100%; border-radius: 5px;">
+            <p style="font-size: 14px; margin-top: 10px; height: 35px; overflow: hidden;">One Battle After Another</p>
+        </div>
+        
+        <div class="card" onclick="window.location.href='/movies/crime-101.html'" style="width: 190px; margin: 15px; background: #1f1f1f; padding: 10px; border-radius: 10px; cursor: pointer; transition: 0.3s;">
             <img src="https://image.tmdb.org/t/p/w500/2HoR2x23bqKpopluoBD1FH3tBi7.jpg" style="width: 100%; border-radius: 5px;">
-            <p style="font-size: 14px; margin-top: 10px; height: 40px; overflow: hidden;">Crime 101</p>
+            <p style="font-size: 14px; margin-top: 10px; height: 35px; overflow: hidden;">Crime 101</p>
         </div>
         
-        <div class="movie-card" onclick="window.location.href='/movies/rental-family.html'" style="cursor:pointer; width: 180px; margin: 10px; background: #1f1f1f; padding: 10px; border-radius: 8px; transition: 0.3s;">
+        <div class="card" onclick="window.location.href='/movies/rental-family.html'" style="width: 190px; margin: 15px; background: #1f1f1f; padding: 10px; border-radius: 10px; cursor: pointer; transition: 0.3s;">
             <img src="https://image.tmdb.org/t/p/w500/nRrwqApUDFL8gLGyJFIdDkmoule.jpg" style="width: 100%; border-radius: 5px;">
-            <p style="font-size: 14px; margin-top: 10px; height: 40px; overflow: hidden;">Rental Family</p>
+            <p style="font-size: 14px; margin-top: 10px; height: 35px; overflow: hidden;">Rental Family</p>
         </div>
-        
         </div>
     </body>
     </html>
