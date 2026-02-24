@@ -98,7 +98,25 @@ def generate_detail_page(item):
     '''
     with open(f"movies/{slug}.html", "w", encoding="utf-8") as f:
         f.write(html)
-
+def generate_sitemap(items):
+    # Use a clean header and no extra spaces
+    sitemap_content = '<?xml version="1.0" encoding="UTF-8"?>\n'
+    sitemap_content += '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n'
+    
+    # Add Homepage
+    sitemap_content += '<url><loc>https://freemoviesdownload.vercel.app/</loc><priority>1.0</priority></url>\n'
+    
+    for m in items:
+        title = m.get('title')
+        if title:
+            slug = title.replace(" ", "-").replace("/", "-").lower()
+            sitemap_content += f'<url><loc>https://freemoviesdownload.vercel.app/movies/{slug}.html</loc><priority>0.8</priority></url>\n'
+    
+    sitemap_content += '</urlset>'
+    
+    with open("sitemap.xml", "w", encoding="utf-8") as f:
+        f.write(sitemap_content)
+        
 def generate_index(items):
     cards = ""
     for m in items:
