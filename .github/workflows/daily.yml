@@ -1,11 +1,11 @@
-name: Daily Movie Update
+name: Global Movie Update
 on:
   schedule:
-    - cron: '0 */6 * * *' # Runs every 6 hours (Better for API health)
-  workflow_dispatch:      # Allows you to click "Run" manually
+    - cron: '0 */6 * * *'
+  workflow_dispatch: 
 
 permissions:
-  contents: write         # FIXES THE 404 ERROR
+  contents: write  # THIS IS THE OVERRIDE
 
 jobs:
   build:
@@ -13,6 +13,9 @@ jobs:
     steps:
       - name: Checkout Code
         uses: actions/checkout@v3
+        with:
+          # Use fetch-depth 0 to ensure we have full history for the push
+          fetch-depth: 0 
 
       - name: Setup Python
         uses: actions/setup-python@v4
@@ -22,18 +25,18 @@ jobs:
       - name: Install Dependencies
         run: pip install requests
 
-      - name: Run Update Script
+      - name: Run Automation Script
         env:
           TMDB_API_KEY: ${{ secrets.TMDB_API_KEY }}
           UNIVERSAL_LINK: ${{ secrets.UNIVERSAL_LINK }}
           DIRECT_AD_LINK: ${{ secrets.DIRECT_AD_LINK }}
         run: python main.py
 
-      - name: Commit and Push Changes
+      - name: Commit and Push
         run: |
           git config --global user.name "github-actions[bot]"
           git config --global user.email "github-actions[bot]@users.noreply.github.com"
-          # This line now includes the sitemap and robots files
-          git add index.html sitemap.xml robots.txt movies/
-          git commit -m "Automated Update: Added Sitemap and Movies" || echo "No changes"
-          git push
+          git add -A
+          # The || exit 0 prevents the 128 error if there's nothing new to commit
+          git commit -m "Automated Update: $(date)" || exit 0
+          git push origin main
