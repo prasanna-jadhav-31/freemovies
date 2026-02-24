@@ -98,6 +98,7 @@ def generate_detail_page(item):
     '''
     with open(f"movies/{slug}.html", "w", encoding="utf-8") as f:
         f.write(html)
+        
 def generate_sitemap(items):
     # Use a clean header and no extra spaces
     sitemap_content = '<?xml version="1.0" encoding="UTF-8"?>\n'
@@ -116,6 +117,12 @@ def generate_sitemap(items):
     
     with open("sitemap.xml", "w", encoding="utf-8") as f:
         f.write(sitemap_content)
+
+def generate_robots_txt():
+    content = "User-agent: *\nAllow: /\n"
+    content += "Sitemap: https://freemoviesdownload.vercel.app/sitemap.xml"
+    with open("robots.txt", "w", encoding="utf-8") as f:
+        f.write(content)
         
 def generate_index(items):
     cards = ""
