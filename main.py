@@ -120,6 +120,7 @@ def generate_index(items):
         <title>FreeMoviesDownload - Global Movies & TV</title>
         {AD_POP_UNDER} {AD_SOCIAL_BAR}
         <style>body {{ background: #141414; color: white; font-family: sans-serif; margin: 0; }} .grid {{ display: flex; flex-wrap: wrap; justify-content: center; padding: 20px; }}</style>
+    <meta name="google-site-verification" content="sr8tV0LhooUc0te1Pr-1kYg-ShKKrqyphiw1dHAguBg" />
     </head>
     <body>
         {generate_header()}
