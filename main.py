@@ -123,7 +123,51 @@ def generate_robots_txt():
     content += "Sitemap: https://freemoviesdownload.vercel.app/sitemap.xml"
     with open("robots.txt", "w", encoding="utf-8") as f:
         f.write(content)
+
+def build_site(items):
+    cards = ""
+    sitemap_urls = ""
+    
+    # Base URL of your site
+    base_url = "https://freemoviesdownload.vercel.app"
+    
+    for item in items:
+        slug = save_page(item) # This creates the movies/slug.html files
+        poster = f"https://image.tmdb.org/t/p/w500{item.get('poster_path')}"
         
+        # Build Homepage Cards
+        cards += f'''
+        <div class="card" onclick="window.location.href='movies/{slug}.html'" style="width:180px; margin:10px; cursor:pointer;">
+            <img src="{poster}" style="width:100%; border-radius:8px;">
+            <p>{item.get("title")}</p>
+        </div>'''
+        
+        # Build Sitemap Entries
+        sitemap_urls += f'''
+    <url>
+        <loc>{base_url}/movies/{slug}.html</loc>
+        <lastmod>2026-02-24</lastmod>
+        <priority>0.80</priority>
+    </url>'''
+    
+    # 1. GENERATE INDEX.HTML
+    with open("index.html", "w", encoding="utf-8") as f:
+        f.write(f'<!DOCTYPE html><html><head><title>FreeMoviesDownload</title><style>body{{background:#141414; color:white; font-family:sans-serif; margin:0;}} .grid{{display:flex; flex-wrap:wrap; justify-content:center; padding:20px;}}</style></head><body>{generate_header()}<div class="grid">{cards}</div></body></html>')
+    
+    # 2. GENERATE SITEMAP.XML (The Missing Piece)
+    sitemap_header = '<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n'
+    sitemap_header += f'    <url><loc>{base_url}/</loc><priority>1.0</priority></url>'
+    sitemap_footer = '\n</urlset>'
+    
+    with open("sitemap.xml", "w", encoding="utf-8") as f:
+        f.write(sitemap_header + sitemap_urls + sitemap_footer)
+        
+    # 3. GENERATE ROBOTS.TXT
+    with open("robots.txt", "w", encoding="utf-8") as f:
+        f.write(f"User-agent: *\nAllow: /\nSitemap: {base_url}/sitemap.xml")
+
+    print("Success: index.html, sitemap.xml, and robots.txt generated!")
+    
 def generate_index(items):
     cards = ""
     for m in items:
